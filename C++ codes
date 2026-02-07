@@ -1,3 +1,5 @@
+program of 2's power
+
 #include <iostream>
 using namespace std;
 
@@ -36,5 +38,38 @@ int main() {
 
     power aa;
     aa.is_power_2(n);
+    return 0;
+}
+
+program for fibonacci series
+
+#include <iostream>
+using namespace std;
+class factorial{
+    private:
+    int i=1, x, y, z;
+    public:
+    void fact(int n)
+    {
+        x=0;
+        y=1;
+        z=0;
+        while(i<=n)
+        {
+            cout<<z<<ends;
+            x=y;
+            y=z;
+            z=x+y;
+            i++;
+        }
+    }
+};
+int main() {
+int n;
+cout<<"Enter number of terms to print fibonacci series: ";
+cin>>n;
+factorial aa;
+aa.fact(n);
+
     return 0;
 }
