@@ -73,3 +73,48 @@ aa.fact(n);
 
     return 0;
 }
+
+Maximum product of two numbers in array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[100], max, smax, n, i, pro;
+
+    cout<<"\nEnter size of array(max 100): ";
+    cin>>n;
+
+    cout<<"\nEnter "<<n<<" elements: ";
+    for(i=0; i<n; i++)
+        cin>>a[i];
+
+    cout<<"\nYour array is: ";
+    for(i=0; i<n; i++)
+        cout<<a[i]<<ends;
+
+    max = a[0];
+
+    // Find maximum
+    for(i=1; i<n; i++)
+    {
+        if(a[i] > max)
+            max = a[i];
+    }
+
+    smax = -1;   // Important change
+
+    // Find second maximum
+    for(i=0; i<n; i++)
+    {
+        if(a[i] > smax && a[i] < max)
+            smax = a[i];
+    }
+
+    pro = max * smax;
+
+    cout<<"\nMaximum product in given array is "
+        <<pro<<" made up of "<<max<<" & "<<smax;
+
+    return 0;
+}
