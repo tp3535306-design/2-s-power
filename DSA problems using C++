@@ -120,4 +120,23 @@ int main() {
 }
 
 
-Remove
+program to check bulb is on or off(perfect square)
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cout<<"Enter number of bulbs: ";
+    cin>>n;
+
+    int root = sqrt(n);
+
+    if(root * root == n)
+        cout<<n<<" number bulb is ON";
+    else
+        cout<<n<<" number bulb is OFF";
+
+    return 0;
+}
