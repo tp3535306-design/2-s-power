@@ -140,3 +140,38 @@ int main() {
 
     return 0;
 }
+
+Program to find atleast twice of others
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, a[100], i, max=-1, smax=-1, mind=0;
+    cout<<"Enter size of array(max 100): ";
+    cin>>n;
+    cout<<"Enter "<<n<<" elements: ";
+    for(i=0; i<n; i++)
+    cin>>a[i];
+    cout<<"\nYour array is: ";
+    for(i=0; i<n; i++)
+    cout<<a[i]<<ends;
+    for(i=0; i<n; i++)
+    {
+        if(max<a[i])
+        {
+            smax=max;
+            max=a[i];
+            mind++;
+        }
+        else if(smax<a[i])
+        smax=a[i];
+    }
+    if(smax*2<=max)
+    cout<<endl<<max<<" is greater than twice of all numbers in array";
+    else
+    cout<<endl<<"There is no any number greater than twice of all numbers in array";
+
+    return 0;
+}
