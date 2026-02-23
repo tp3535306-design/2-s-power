@@ -175,3 +175,35 @@ int main() {
 
     return 0;
 }
+
+Program to check lucky number
+
+#include <iostream>
+using namespace std;
+int main() {
+   int a[100], n, i, j, lucky=-1, count;
+   cout<<"Enter size of array(max 100): ";
+   cin>>n;
+   cout<<"Enter "<<n<<" elements: ";
+   for(i=0; i<n; i++)
+   cin>>a[i];
+   cout<<"\nYour array is: ";
+   for(i=0; i<n; i++)
+   cout<<a[i]<<ends;
+   for(i=0; i<n; i++)
+   {
+       count=0;
+       for(j=0; j<n; j++)
+       {
+           if(a[i]==a[j])
+           count++;
+       }
+   
+       if(a[i]==count)
+   
+   if(lucky==-1)
+   cout<<"\nThere is no lucky number";
+   else
+   cout<<"\nLucky number is "<<lucky;
+    return 0;
+}
