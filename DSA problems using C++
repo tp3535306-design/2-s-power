@@ -263,3 +263,46 @@ int main() {
     }
     cout<<"\nMaximum subarray in given array is: "<<msum;
 }
+
+Program to find largest valued combination of array elements
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    vector<string> arr(n);
+
+    cout << "Enter numbers: ";
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        arr[i] = to_string(x);   // convert int to string
+    }
+
+    // Custom sort
+    sort(arr.begin(), arr.end(), [](string a, string b) {
+        return a + b > b + a;   // descending directly
+    });
+
+    // If largest element is "0", answer is 0
+    if (arr[0] == "0") {
+        cout << "Largest Number: 0";
+        return 0;
+    }
+
+    // Concatenate all strings
+    string result = "";
+    for (string s : arr) {
+        result += s;
+    }
+
+    cout << "Largest Number: " << result;
+
+    return 0;
+}
