@@ -306,3 +306,31 @@ int main() {
 
     return 0;
 }
+
+Program to count all negative and positive integers in unsorted array
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, a[100], i, negcount=0, poscount=0;
+    cout<<"Enter size of array(max 100): ";
+    cin>>n;
+    cout<<"Enter "<<n<<" elements: ";
+    for(i=0; i<n; i++)
+        cin>>a[i];
+
+    cout<<"\nYour array is: ";
+    for(i=0; i<n; i++)
+        cout<<a[i]<<ends;
+    for(i=0; i<n; i++)
+    {
+        if(a[i]>0)
+        poscount++;
+        else if(a[i]<0)
+        negcount++;
+    }
+    cout<<"\nThere are "<<poscount<<" positive and "<<negcount<<" negative numbers";
+    return 0;
+}
+
