@@ -392,3 +392,94 @@ int main() {
     }
     }
 }
+
+Program to find minimum value from the stack
+
+#include <iostream>
+using namespace std;
+int stack[15], mstack[10], top=-1,mtop=-1,n,val;
+void push(int val)
+{
+    if(top>=n-1)
+    cout<<"\nStack Overflow";
+    else
+    {
+        top++;
+        stack[top]=val;
+        if(mtop<0|| mstack[mtop]>stack[top])
+        {
+            mtop++;
+            mstack[mtop]=stack[top];
+            cout<<"\nValue pushed into the stack";
+        }
+    }
+}
+void pop()
+{
+    if(top<0)
+    cout<<"\nStack Underflow";
+    else
+    {
+        if(mtop!=-1 && stack[top]==mstack[mtop])
+        {
+       
+        top--;
+        
+        mtop--;
+        cout<<"\nStack popped";
+        }
+        else
+        {
+           top--;
+           cout<<"\nStack popped";
+        }
+    }
+}
+void display()
+{
+    if(top<0)
+    cout<<"\nStack Underflow";
+    else
+    {
+        cout<<"Stack: ";
+        for(int i=top; i>=0; i--)
+        cout<<endl<<stack[i];
+    }
+}
+void min()
+{
+    if(mtop<0)
+    cout<<"\nStack Underflow";
+    else
+    {
+        cout<<"\nMinimum element from stack is: "<<mstack[mtop];
+    }
+}
+int main() {
+    cout<<"Enter size of stack: ";
+    cin>>n;
+   while(1)
+   {
+       int ch;
+       cout<<"\n1->Push value\n2->Display stack\n3->Pop stack\n4->Minimum value\n5->Exit\nEnter Your Choice: ";
+       cin>>ch;
+       if(ch==1)
+       {
+           cout<<"Enter value to push in stack: ";
+           cin>>val;
+           push(val);
+       }
+       else if(ch==2)
+       display();
+       else if(ch==3)
+       pop();
+       else if(ch==4)
+       min();
+       else if(ch==5)
+       break;
+       else
+       cout<<"\nInvalid choice";
+   }
+
+    return 0;
+}
