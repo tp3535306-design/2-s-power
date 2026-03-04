@@ -483,3 +483,46 @@ int main() {
 
     return 0;
 }
+
+Program to check largest consecutive sequence
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, a[100], i;
+    cout<<"Enter size of array(max 100): ";
+    cin>>n;
+
+    cout<<"Enter "<<n<<" elements: ";
+    for(i=0; i<n; i++)
+        cin>>a[i];
+
+    sort(a, a+n);   // Correct sorting
+
+    int maxcount = 1;
+    int count = 1;
+
+    for(i=1; i<n; i++)
+    {
+        if(a[i] == a[i-1])   // skip duplicates
+            continue;
+
+        if(a[i] == a[i-1] + 1)
+        {
+            count++;
+        }
+        else
+        {
+            maxcount = max(maxcount, count);
+            count = 1;
+        }
+    }
+
+    maxcount = max(maxcount, count);
+
+    cout<<"\nMaximum consecutive sequence length is: "<<maxcount;
+
+    return 0;
+}
