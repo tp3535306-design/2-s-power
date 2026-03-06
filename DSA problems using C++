@@ -526,3 +526,43 @@ int main() {
 
     return 0;
 }
+
+Program to check duplicate element which is greater than array size
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n, nums[100], ans = 0;
+
+    cout<<"Enter size of array: ";
+    cin>>n;
+
+    cout<<"Enter "<<n<<" elements: ";
+    for(int i=0;i<n;i++)
+        cin>>nums[i];
+
+    // Finding duplicate
+    for(int i=0;i<n;i++)
+    {
+        int ele = abs(nums[i]);
+
+        if(nums[ele] > 0)
+            nums[ele] = -nums[ele];
+        else
+        {
+            ans = ele;
+            break;
+        }
+    }
+
+    // Restoring original array
+    for(int i=0;i<n;i++)
+        nums[i] = abs(nums[i]);
+
+    cout<<"Duplicate element is: "<<ans;
+
+    return 0;
+}
